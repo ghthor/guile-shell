@@ -1,1 +1,1 @@
-extern void LaunchGuile();
+extern void LaunchGuile(int argc, char** argv);

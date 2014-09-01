@@ -18,7 +18,7 @@ shell_main (void *data, int argc, char **argv)
 }
 
 void
-LaunchGuile ()
+LaunchGuile (int argc, char** argv)
 {
-    scm_boot_guile (0, NULL, shell_main, 0);
+    scm_boot_guile (argc, argv, shell_main, 0);
 }
