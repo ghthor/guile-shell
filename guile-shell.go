@@ -17,8 +17,6 @@ func LogNow() {
 }
 
 func main() {
-	fmt.Println("starting guile shell")
-
 	args := os.Args[1:]
 
 	cargs := C.MakeCharArray(C.int(len(args)))
@@ -28,5 +26,9 @@ func main() {
 		C.SetArrayString(cargs, C.CString(s), C.int(i))
 	}
 
+	fmt.Println("guile shell starting")
+
 	C.LaunchGuile(C.int(len(args)), cargs)
+
+	fmt.Println("guile shell exited")
 }
